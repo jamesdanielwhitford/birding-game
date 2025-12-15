@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: 4dkhx-zhkou
+created: 2025-12-15T18:06:57+02:00

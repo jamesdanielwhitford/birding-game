@@ -1,6 +1,60 @@
 # Godot 4+ specific ignores
 .godot/
+
+# Godot-specific
+*.translation
+*.import
+export.cfg
+export_presets.cfg
+.mono/
+data_*/
+mono_crash.*.json
+
+# Android build
 /android/
+build/
+.gradle/
+
+# iOS build
+/ios/
+*.dSYM.zip
+*.ipa
+
+# macOS build
+*.dmg
+*.app/
+
+# Windows build
+*.exe
+*.pdb
+*.dll
+
+# Linux build
+*.x86
+*.x86_64
+
+# Mono/C# specific
+.mono/
+.vs/
+*.csproj
+*.sln
+.vscode/
+.idea/
+
+# Import cache
+.import/
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS/Editor specific
+.DS_Store
+Thumbs.db
+*.swp
+*~
+*.tmp
 
 # Project specific ignores
 assets/
@@ -9,3 +63,8 @@ shared/
 # Godot docs
 godot-docs/
 vector-tools/
+
+# AI tools
+CLAUDE.md
+GEMINI.md
+.claude/

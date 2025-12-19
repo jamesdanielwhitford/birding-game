@@ -1,0 +1,12 @@
+# Python tools and documentation
+vector-tools/
+godot-docs/
+
+# Planning and instruction files
+shared/
+CLAUDE.md
+
+# Editor config files (not game assets)
+.editorconfig
+.gitattributes
+.gitignore

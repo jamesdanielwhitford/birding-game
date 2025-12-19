@@ -16,7 +16,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 # Camera references
 @onready var camera_pivot = $CameraPivot
-@onready var camera = $CameraPivot/Camera3D
+@onready var spring_arm = $CameraPivot/SpringArm3D
+@onready var camera = $CameraPivot/SpringArm3D/Camera3D
 
 # Camera state
 var is_first_person = false
@@ -25,6 +26,9 @@ var target_camera_distance = third_person_distance
 func _ready():
 	# Capture the mouse cursor
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+	# Exclude the player from SpringArm collision detection
+	spring_arm.add_excluded_object(get_rid())
 
 func _input(event):
 	# Camera rotation with mouse
@@ -74,8 +78,8 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, speed)
 
 	# Smooth camera transition between first/third person
-	var current_distance = camera.position.z
-	camera.position.z = lerp(current_distance, target_camera_distance, camera_transition_speed * delta)
+	var current_length = spring_arm.spring_length
+	spring_arm.spring_length = lerp(current_length, target_camera_distance, camera_transition_speed * delta)
 
 	move_and_slide()
 
